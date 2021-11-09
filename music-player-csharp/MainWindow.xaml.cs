@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Media;
 
 namespace music_player_csharp
 {
@@ -23,6 +24,16 @@ namespace music_player_csharp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btn_start_Click(object sender, RoutedEventArgs e)
+        {
+            label_status.Content = "playing";
+        }
+
+        private void btn_stop_Click(object sender, RoutedEventArgs e)
+        {
+            label_status.Content = "pause";
         }
     }
 }
