@@ -16,11 +16,13 @@ using System.Media;
 
 namespace music_player_csharp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        // Path to the music/sound
+        static string source = @"G:\music.wav";
+        // Initialize player
+        SoundPlayer player = new SoundPlayer(source);
+
         public MainWindow()
         {
             InitializeComponent();
@@ -28,11 +30,14 @@ namespace music_player_csharp
 
         private void btn_start_Click(object sender, RoutedEventArgs e)
         {
+            
+            player.Play();
             label_status.Content = "playing";
         }
 
         private void btn_stop_Click(object sender, RoutedEventArgs e)
         {
+            player.Stop();
             label_status.Content = "pause";
         }
     }
